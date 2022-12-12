@@ -12,10 +12,6 @@ app.get("/", (req, res) => {
     try{res.send("Welcome to Server!")
     } catch(err){return res.status(404).json({message: err})}})
 
-app.use((req, res, next) => {
-    res.status(400).json({message: "enpoint not found"})
-})
-
 
 app.use(usersRoutes);
 //app.use(sensoresRoutes);
