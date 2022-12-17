@@ -28,11 +28,11 @@ export const createUser = async (req, res) => {
     try{
         const [results] = await pool.query
         ("INSERT INTO USUARIOS(EMAIL, E_PASSWORD, NAME, SURNAME, PHONE) VALUES (?,?,?,?,?)", [
-            req.body.email, 
-            req.body.password,
-            req.body.name,
-            req.body.surname,
-            req.body.phone])
+            req.body.EMAIL, 
+            req.body.E_PASSWORD,
+            req.body.NAME,
+            req.body.SURNAME,
+            req.body.PHONE])
         res.json({
             id: results.insertId,
             ...req.body

@@ -1,27 +1,22 @@
-import { Router } from "express"
-import { getUsers, getUser, deleteUser, updateUser, createUser } from "../controllers/users"
+import { Router } from "express";
+import {
+  getSensors,
+  getSensor,
+  deleteSensors,
+  updateSensors,
+  createSensors,
+} from "../controllers/sensores.js";
 
-const router = Router()
+const router = Router();
 
-//users routes
+router.get("/sensores/", getSensors);
 
-router.get("/sensores/", getUsers)
+router.get("/sensores/:id", getSensor);
 
+router.post("/sensores", createSensors);
 
-router.get("/sensores/:id", getUser)
+router.put("/sensores/:id", updateSensors);
 
+router.delete("/sensores/:id", deleteSensors);
 
-router.post("/sensores", createUser)
-
-
-router.put("/sensores/:id", updateUser)
-
-
-router.delete("/sensores/:id", deleteUser)
-
-
-//sensors routes
-
-//actuators routes
-
-export default router
+export default router;
